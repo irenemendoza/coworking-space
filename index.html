@@ -20,13 +20,112 @@
 
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#fafafa">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
+  <section class="container">
+    <section class="header">
+      <div class="logo">
+        <a href="#">
+          <img src="img/Cozy Corner.svg" alt="Logo">
+        </a>
+      </div>
+      <div class="navbars">
+        <nav class="menu">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Featured</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">More</a></li>
+          </ul>
+        </nav>
+        <div class="navbar">
+          <div class="search-container" id="searchContainer">
+            <input type="text" class="search-input" placeholder="Buscar...">
+            <button class="search-icon" id="searchBtn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+          <nav class="login">
+            <ul>
+              <li><a href="#" class="sign-in">Sign In</a></li>
+              <li><a href="#" class="sign-up">Sign up</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script type="module" src="/src/main.js"></script>
+    </section>
+    <section class="hero">
+      <div class="title">
+        <h1>Find your comfort working zone with Cozy Corner</h1>
+        <p>Change your work environment by using a co-working place, to meet new people and gain a new network</p>
+      </div>
+      <div class="services">
+        <ul>
+          <li>
+            <img src="img/Check.svg" alt="">
+            Virtual Office Setup
+          </li>
+          <li>
+            <img src="img/Check.svg" alt="">
+            Open Workspace
+          </li>
+          <li>
+            <img src="img/Check.svg" alt="">
+            Space for Event
+          </li>
+          <li>
+            <img src="img/Check.svg" alt="">
+            Chill Out Zone
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="categories">
+      <article>
+        <img src="img/Location.svg" alt="">
+        <h3>20+ Location</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+      </article>
+      <article>
+        <img src="img/Room.svg" alt="">
+        <h3>324 Rooms Available</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+      </article>
+      <article>
+        <img src="img/wifi.svg" alt="">
+        <h3>100% Internet Connected</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+      </article>
+    </section>
+  </section>
+
+  <script type="module" src="src/main.js"></script>
+
+  <script>
+    const btn = document.getElementById('searchBtn');
+    const container = document.getElementById('searchContainer');
+
+    btn.addEventListener('click', () => {
+      container.classList.toggle('active');
+      const input = container.querySelector('input');
+      if (container.classList.contains('active')) {
+        input.focus();
+      } else {
+        input.value = '';
+      }
+    });
+  </script>
+
 
 </body>
 
