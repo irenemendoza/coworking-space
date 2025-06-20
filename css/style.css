@@ -8,11 +8,13 @@
   --text-font: "Poppins", sans-serif;
   --text2-font: "Nunito Sans", sans-serif;
   /*Tamaños de fuente*/
-  --text-size: 12px;
+  --text-size: 14px;
   --text2-size: 18px;
 }
 
 body {
+  margin: 0;
+  padding: 0;
   background-image: url(../img/ellipse@2x.png), url(../img/ellipse@2x.png);
   background-repeat: no-repeat;
   background-size: 25%, 12%;
@@ -23,6 +25,9 @@ body {
   max-width: 1300px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
 }
 
 .header {
@@ -65,6 +70,10 @@ body {
   color: black;
 }
 
+.header .menu ul a.active {
+  color: var(--color-dark-green);
+}
+
 .header .menu ul a:hover {
   font-weight: bold;
   color: var(--color-dark-green);
@@ -96,7 +105,7 @@ body {
   color: var(--color-white);
   font-family: var(--text-font);
   font-size: var(--text-size);
-
+  transition: all 0.5s ease;
 }
 
 .header .navbar .login .sign-up:hover {
@@ -106,33 +115,96 @@ body {
 
 .hero {
   width: 100%;
-  background-color: var(--color-white);
+  min-height: 500px;
   background-image: url(../img/Placeholder.jpg);
-  background-size: 60%;
+  background-size: 60% auto;
   background-repeat: no-repeat;
   display: flex;
-  flex-direction: column;
-  margin-bottom: 40px;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.hero-content {
+  width: 50%;
+
+
 }
 
 .hero .title {
+
+
   background-color: white;
   opacity: 0.7;
-  display: inline-block;
-  width: 50%;
-  transform: translateX(100);
+  padding: 30px;
 }
 
+.hero h1::before {
+  content: '';
+  width: 42px;
+  height: 5px;
+  background-color: var(--color-dark-green);
+  position: absolute;
+  right: -43px;
+  top: 26px;
+}
+
+.hero .services {
+  width: 60%;
+  padding-right: 40px;
+  margin-left: auto;
+}
+
+.hero .services ul {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  list-style: none;
+
+
+}
+
+
+
+.hero .services li {
+  background-image: url(../img/Check.svg);
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 20px;
+  background-size: 20px;
+}
+
+.hero .services img {
+  width: 20px;
+}
+
+.hero .services p {
+  font-family: var(--text-font);
+  font-size: var(--text-size);
+  display: inline-block;
+  padding: 5px;
+}
+
+
 .hero h1 {
+  display: inline-block;
   font-family: var(--heading-font);
   font-size: 40px;
   z-index: 1;
+  width: 65%;
+  margin: 0;
+  position: relative;
 }
 
-.hero p {
+.hero .title p {
+  display: inline-block;
   font-family: var(--text-font);
   font-size: var(--text-size);
+  font-weight: 500;
   color: var(--color-dark-green);
+  z-index: 1;
 }
 
 .categories {
